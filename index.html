@@ -1,45 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
+
   <style>
-    #messageBox {
-      display:none;
-      margin-top: 10px;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
-    textarea, input[type="email"] {
-      width: 300px;
-      margin-top: 5px;
+    .container {
+      background: #ffffff;
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.5;
+    }
+
+    h2 {
+      margin-top: 25px;
+      font-size: 22px;
+    }
+
+    button {
+      background: #4f46e5;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #3730a3;
+      transform: translateY(-2px);
+    }
+
+    #messageBox {
+      display: none;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
       display: block;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: #16a34a;
+    }
+
+    .submit-btn:hover {
+      background: #15803d;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
-  <h1>Hello</h1>
-  <p>I am a Computer Science Graduate who is currently looking for software engineering roles in London. If anyone is interested, please provide your message that will be delivered to my inbox.</p>
 
-  <h2>Interested?</h2>
-  <button onclick="showInput()">Yes</button>
-  <button onclick="hideInput()">No</button>
+  <div class="container">
+    <h1>Hello 👋</h1>
+    <p>
+      I am a Computer Science Graduate currently looking for software engineering roles in London.  
+      If you're interested in connecting, feel free to leave me a message — it will go straight to my inbox.
+    </p>
 
-  <!-- Contact form -->
-  <form id="messageBox" action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <h2>Interested?</h2>
 
-    <!-- Email field -->
-    <label for="userEmail">Your Email:</label>
-    <input type="email" id="userEmail" name="email" placeholder="Enter your email" required>
+    <button onclick="showInput()">Yes</button>
+    <button onclick="hideInput()">No</button>
 
-    <!-- Message field -->
-    <label for="userMessage">Your Message:</label>
-    <textarea id="userMessage" name="message" placeholder="Type your message here..." rows="5"></textarea>
+    <form id="messageBox"
+      action="https://formsubmit.co/YOUR_EMAIL_HERE"
+      method="POST">
 
-    <!-- Submit -->
-    <button type="submit" style="margin-top:10px;">Send Message</button>
+      <label for="userEmail">Your Email</label>
+      <input type="email" id="userEmail" name="email" placeholder="Enter your email" required>
 
-    <!-- Prevent spam bots -->
-    <input type="hidden" name="_captcha" value="false">
-  </form>
+      <label for="userMessage">Your Message</label>
+      <textarea id="userMessage" name="message" rows="5" placeholder="Type your message here..."></textarea>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+  </div>
 
   <script>
     function showInput() {
