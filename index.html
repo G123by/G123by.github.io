@@ -3,83 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+  <meta name="description" content="Gabriela Zasheva – Portfolio website for software engineering roles in London.">
+  <title>Gabriela Zasheva | Portfolio</title>
 
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #eef2f3, #dfe9f3);
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      background: linear-gradient(135deg, #eef2f3, #dfe9f3);
+      color: #333;
+      scroll-behavior: smooth;
     }
 
-    .container {
-      background: #ffffff;
-      padding: 40px;
-      max-width: 600px;
-      width: 90%;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    header {
       text-align: center;
-      animation: fadeIn 0.8s ease-in-out;
+      padding: 60px 20px 40px;
     }
 
-    h1 {
-      font-size: 32px;
+    header h1 {
+      font-size: 36px;
       margin-bottom: 10px;
     }
 
-    p {
-      color: #444;
-      line-height: 1.5;
+    header p {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     h2 {
-      margin-top: 25px;
-      font-size: 22px;
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    button {
-      background: #4f46e5;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 10px;
-      margin: 10px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
+    .skills, .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
-    button:hover {
-      background: #3730a3;
-      transform: translateY(-2px);
+    .skill, .project {
+      background: #f3f4f6;
+      padding: 15px 20px;
+      border-radius: 12px;
+      flex: 1 1 200px;
+      text-align: center;
     }
 
-    #messageBox {
-      display: none;
-      margin-top: 20px;
-      text-align: left;
+    .project a {
+      text-decoration: none;
+      color: #4f46e5;
+      font-weight: bold;
+    }
+
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     label {
       font-weight: bold;
-      margin-bottom: 5px;
-      display: block;
     }
 
     input, textarea {
-      width: 100%;
       padding: 12px;
-      margin-top: 5px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
       font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
     }
 
     textarea {
@@ -87,39 +92,96 @@
     }
 
     .submit-btn {
-      width: 100%;
       background: #16a34a;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
     }
 
     .submit-btn:hover {
       background: #15803d;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: #4f46e5;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+      background: #3730a3;
+    }
+
+    @media(max-width:600px){
+      header h1 { font-size:28px; }
+      section { padding: 30px 20px; }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Hello </h1>
+  <!-- Header / Intro -->
+  <header>
+    <h1>Gabriela Zasheva</h1>
+    <p>Computer Science Graduate | Software Engineering | London</p>
+    <a href="resume.pdf" class="resume-btn" target="_blank">Download Resume</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
     <p>
-      I am a Computer Science Graduate currently looking for software engineering roles in London.  
-      If you're interested in connecting, feel free to leave me a message — it will go straight to my inbox.
+      I am a recent Computer Science graduate passionate about building modern, responsive, and AI-powered web applications. I enjoy problem-solving and continuously learning new technologies to create impactful software solutions.
     </p>
+  </section>
 
-    <h2>Interested?</h2>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">JavaScript / React</div>
+      <div class="skill">Python / AI Development</div>
+      <div class="skill">HTML & CSS / Responsive Design</div>
+      <div class="skill">Front-End Development</div>
+      <div class="skill">Version Control (Git / GitHub)</div>
+    </div>
+  </section>
 
-    <button onclick="showInput()">Yes</button>
-    <button onclick="hideInput()">No</button>
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <a href="https://github.com/yourusername/project1" target="_blank">Project 1</a>
+        <p>React web app with AI-powered features.</p>
+      </div>
+      <div class="project">
+        <a href="https://github.com/yourusername/project2" target="_blank">Project 2</a>
+        <p>Full-stack web application with database integration.</p>
+      </div>
+      <div class="project">
+        <a href="https://github.com/yourusername/project3" target="_blank">Project 3</a>
+        <p>Responsive portfolio website hosted on GitHub Pages.</p>
+      </div>
+    </div>
+  </section>
 
-    <form id="messageBox"
-      action="https://formsubmit.co/gabriela.zashevaa@gmail.com"
-      method="POST">
-
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>If you're interested in connecting for software engineering opportunities, leave a message below and it will go straight to my inbox.</p>
+    
+    <form id="contactForm" method="POST">
       <label for="userEmail">Your Email</label>
       <input type="email" id="userEmail" name="email" placeholder="Enter your email" required>
 
@@ -130,18 +192,14 @@
 
       <input type="hidden" name="_captcha" value="false">
     </form>
-  </div>
+  </section>
 
+  <!-- Email Protection Script -->
   <script>
-    function showInput() {
-      document.getElementById("messageBox").style.display = "block";
-    }
-
-    function hideInput() {
-      document.getElementById("messageBox").style.display = "none";
-      document.getElementById("userEmail").value = "";
-      document.getElementById("userMessage").value = "";
-    }
+    const form = document.getElementById("contactForm");
+    const user = "gabriela.zashevaa";
+    const domain = "gmail.com";
+    form.action = `https://formsubmit.co/${user}@${domain}`;
   </script>
 
 </body>
