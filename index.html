@@ -20,5 +20,16 @@
     <label for="userMessage">Add Message</label><br>
     <input type="text" id="userMessage" placeholder="Type your message here...">
   </div>
+
+  <script>
+    function showInput() {
+      document.getElementById("messageBox").style.display = "block";
+    }
+     function hideInput() {
+      document.getElementById("messageBox").style.display = "none";
+       document.getElementById("userMessage").value = "";
+    }
+    
+  </script>
 </body>
 </html>
